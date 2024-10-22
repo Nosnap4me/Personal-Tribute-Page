@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Tribute Page</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+        h1 {
+            color: #4682b4;
+            font-size: 3em;
+            margin-bottom: 0.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h2 {
+            color: #1e90ff;
+            margin-top: 1.5em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin: 0 0 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .container:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .message {
+            background-color: #e6e6fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .message p {
+            font-style: italic;
+            color: #4682b4;
+        }
+        audio, video {
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        #quote blockquote {
+            font-size: 1.5em;
+            font-style: italic;
+            border-left: 3px solid #1e90ff;
+            padding-left: 20px;
+            margin: 20px auto;
+            display: inline-block;
+            max-width: 80%;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #quote {
+            margin-top: 30px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Tribute</h1>
+
+        <section id="message">
+            <h2>Special Message</h2>
+            <div class="message">
+                <p>This page is dedicated to someone truly special. Customize it with your own messages, memories, and thoughts.</p>
+            </div>
+        </section>
+
+        <section id="quote">
+            <h2>Inspirational Quote</h2>
+            <blockquote id="quote-text"></blockquote>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="https://placehold.co/1000x1300" alt="Image 1">
+                <img src="https://placehold.co/1000x1300" alt="Image 2">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var quotes = [
+            "The best way to predict the future is to create it. – Abraham Lincoln",
+            "What lies behind us and what lies before us are tiny matters compared to what lies within us. – Ralph Waldo Emerson",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+            "Do not go where the path may lead, go instead where there is no path and leave a trail. – Ralph Waldo Emerson"
+        ];
+        var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quote-text").innerText = randomQuote;
+    </script>
+</body>
+</html>
